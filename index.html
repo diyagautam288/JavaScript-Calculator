@@ -22,5 +22,80 @@
             <a class="title" onclick="location.reload();">CALCULATOR</a>
             <img id="historybutton" src="./images/history.png">
         </div>
-    </div>
+        <div class="calculator">
+            <input type="text"  name="screen" id="answer" readonly>
+            <table>
+                <tr>
+                    <td><button value="(">(</button></td>
+                    <td><button value=")">(</button></td>
+                    <td>
+                        <div class="row">
+                            <div class="col"><button value="C" onclick="clearAll()">C</button></div>
+                            <div class="col"><button value="CE" onclick="deleteLastEntry()">CE</button></div>
+                        </div>
+                    </td>
+                    <td><button value="%">%</button></td>
+                </tr>
+                 <tr>
+                    <td><button value="7">7</button></td>
+                    <td><button value="8">8</button></td>
+                    <td><button value="9">9</button></td>
+                    <td><button value="*">X</button></td>
+                </tr>
+                <tr>
+                    <td><button value="4">4</button></td>
+                    <td><button value="5">5</button></td>
+                    <td><button value="6">6</button></td>
+                    <td><button value="-">-</button></td>
+                </tr>
+                <tr>
+                    <td><button value="1">1</button></td>
+                    <td><button value="2">2</button></td>
+                    <td><button value="3">3</button></td>
+                    <td><button value="+">+</button></td>
+                </tr>
+                <tr>
+                    <td><button value="0">0</button></td>
+                    <td><button value="." style="font-weight: bold;">.</button></td>
+                    <td><button value="/">/</button></td>
+                    <td><button value="=" style="background-color: #25db72; font-weight: bold; color: #ecf0f1;">=</button></td>
+                </tr>
+            </table> 
+            <hr style="max-width: 50vw;margin: 20px auto 0 auto;">
+            <div style="font-size:1rem; display: flex; align-items: center; justify-content: center;">
+                Made with <img style="margin: 0.15rem;" src="./images/heart.png"> by <a style="text-decoration: none; color: #f1c40f; margin-left: 0.25rem;" target="_blank" href="https://diyagautam288.github.io">Diya Gautam</a>
+            </div>
+        </div>
+	</div>
+    <div id="bar1" class = "bars"></div>
+    <div id="bar2" class = "bars"></div>
+    <div id="history"></div>
 </body>
+<script src="./scripts/dark_mode.js"></script>
+<script src="./scripts/cal.js"></script>
+<script src="./scripts/history.js"></script>
+<script>
+    document.addEventListener('keydown',event=>handleKeyPress(event.key));
+    function handleKeyPress(key) {
+        if (key === 'Enter') {
+            handleButtonPress('=');
+        }
+        if (key === 'Delete' || key === 'Backspace') {
+            handleButtonPress('CE');
+        }
+        if (/[0-9]/.test(key)) {
+            handleButtonPress(key);
+        }
+        if (/[\.\+\-\*\/%()]/.test(key)) {
+            handleButtonPress(key);
+        }
+    }
+    function handleButtonPress(value) {
+        const button = document.querySelector(`button[value="${value}"]`);
+        button.classList.add('clicked')
+        button.click();
+        setTimeout(() => {
+            button.classList.remove('clicked')
+        }, 70)
+    }
+</script>

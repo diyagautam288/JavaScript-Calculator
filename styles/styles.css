@@ -115,3 +115,166 @@ input:checked + .toggle-slider:before {
     border-radius: 20px;
     cursor: pointer;
 }
+.calculator {
+    padding: 0.25rem;
+    display: inline-block;
+    margin-top: 10px;
+}
+table {
+    margin: auto;
+}
+button {
+    border: none;
+    background-color: white;
+    width: 20vw;
+    height: 10vh;
+    padding: 0.5rem 0;
+    cursor: pointer;
+    margin: 0.25vmax;
+    font-size: 2vmax;
+    border-radius: 1rem;
+    -moz-transition: all ease 0.5s;
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    -o-transition: all ease 0.5s;
+}
+button:active {
+    transform: scale(0.95);
+    box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+}
+button:hover {
+    -webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+    -moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+    -moz-transition: all ease 0.5s;
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    -o-transition: all ease 0.5s;
+}
+a{
+    outline: none;
+    -moz-transition: all ease 0.5s;
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    -o-transition: all ease 0.5s;
+}
+
+a:hover{
+    text-shadow: 0px 0px 10px rgba(241, 196, 15, 0.5);
+    -moz-transition: all ease 0.5s;
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    -o-transition: all ease 0.5s;
+}
+.row{
+    display: flex;
+    font-size: 1rem;
+    justify-content: center;
+    max-width: 20vw;
+    margin: auto;
+}
+.row .col button{
+    background-color: #f01600;
+    font-weight: bold;
+    color: #ecf0f1; 
+    width: 8vw;
+}
+@media (max-width: 700px) {
+    .row .col button{
+        width: 10vw;
+    }
+}
+#answer {
+    caret-color: #0f38f1;
+}
+input {
+    background-color: rgba(52, 73, 94, 0.5);
+    color: #ecf0f1;
+    outline: none;
+    text-align: right;
+    border: none;
+    font-size: 3rem;
+    width: 80vw;
+    margin-bottom: 0.5rem;
+    border-radius: 0.5rem;
+    padding: 0.5rem 1.5rem;
+    -webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+    -moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+}
+.negative {
+    color: red;
+}
+.clicked {
+    transform: scale(0.68);
+}
+.dark-mode {
+    background-color: black;
+    border-radius: 10px;
+    color: #fff;
+}
+
+.dark-mode body,
+.dark-mode html {
+     background-color: black; 
+     border-radius: 10px;
+     
+}
+
+.dark-mode .calculator {
+     background-color: black; 
+     border-radius: 10px;
+   
+}
+
+.dark-mode table {
+    color: #fff;
+    border-radius: 10px;
+}
+
+.dark-mode button {
+    background-color: #555;
+    color: #fff;
+    border-radius: 10px;
+}
+
+
+ .dark-mode a {
+    color: #fff;
+    border-radius: 10px;
+}
+
+#history{
+    position: absolute;
+    width:90%;
+    height: 80vh;
+    top:10vh;
+    background-color: white;
+    border: 6px solid black;
+    border-radius: 10px;
+    display: none;
+    /* overflow-y: scroll; */
+}
+
+.historyelement{
+    color: black;
+    margin: 20px;
+    font-size: 40px;
+}
+
+#bar1, #bar2{
+    position: absolute;
+    width:30px;
+    height: 4px;
+    background-color: white;
+    margin-top: 20px;
+    margin-right: 20px;
+    margin-left: 93%;
+    transform: rotate(45deg);
+    cursor: pointer;
+    display: none;
+}
+
+#bar2{
+    transform: rotate(135deg);
+}
